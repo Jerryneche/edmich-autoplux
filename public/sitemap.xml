@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url><loc>https://edmich.com/</loc></url>
+  <url><loc>https://edmich.com/business</loc></url>
+  <url><loc>https://edmich.com/business/market</loc></url>
+  <url><loc>https://edmich.com/business/mechanics</loc></url>
+  <url><loc>https://edmich.com/business/logistics</loc></url>
+  <url><loc>https://edmich.com/shop</loc></url>
+  <url><loc>https://edmich.com/about</loc></url>
+  <url><loc>https://edmich.com/auth/login</loc></url>
+  <url><loc>https://edmich.com/auth/register</loc></url>
+</urlset>

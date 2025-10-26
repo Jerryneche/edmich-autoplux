@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+/*import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -28,6 +28,59 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+      </body>
+    </html>
+  );
+}
+*/
+
+import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
+export const metadata: Metadata = {
+  title: "Edmich Autoplux",
+  description:
+    "Nigeria’s trusted B2B auto parts marketplace—Autoplux Market, Mechanics, and Logistics in one platform.",
+  keywords: [
+    "auto parts",
+    "Nigeria",
+    "suppliers",
+    "mechanics",
+    "B2B",
+    "Edmich",
+  ],
+  icons: { icon: "/favicon.ico" },
+  openGraph: {
+    title: "Edmich Autoplux",
+    description:
+      "Buy genuine spare parts, connect mechanics, streamline logistics—built for Nigeria and Africa.",
+    url: "https://edmich.com",
+    siteName: "Edmich Autoplux",
+    images: [{ url: "/edmich-logo.png", width: 1200, height: 630 }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Edmich Autoplux",
+    description: "Nigeria’s B2B auto parts marketplace.",
+    images: ["/edmich-logo.png"],
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className={`${inter.className} bg-neutral-50 text-neutral-900`}>
+        {children}
+        <Toaster position="top-right" />
       </body>
     </html>
   );
