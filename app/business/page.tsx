@@ -1,8 +1,6 @@
-import { headers } from "next/headers";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-
 import {
   BuildingStorefrontIcon,
   WrenchScrewdriverIcon,
@@ -22,24 +20,32 @@ interface Supplier {
   company: string;
   product: string;
   price: string;
-  // Add other fields as needed
 }
 
-export async function getSuppliers() {
-  const headersList = headers(); // ✅ This is now awaited correctly
-  const host = headersList.get("host");
-  const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
+export async function getSuppliers(): Promise<Supplier[]> {
+  try {
+    const res = await fetch("/api/suppliers", {
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-  const res = await fetch(`${protocol}://${host}/api/suppliers`, {
-    cache: "no-store",
-  });
+    if (!res.ok) {
+      console.error(`Fetch error: ${res.status} ${res.statusText}`);
+      return [];
+    }
 
-  if (!res.ok) return [];
-  return res.json();
+    const data = await res.json();
+    return Array.isArray(data) ? data : [];
+  } catch (error) {
+    console.error("Error fetching suppliers:", error);
+    return [];
+  }
 }
 
 export default async function BusinessPage() {
-  const suppliers = await getSuppliers();
+  const suppliers: Supplier[] = await getSuppliers();
 
   return (
     <main className="bg-gradient-to-b from-white via-neutral-50 to-white min-h-screen">
