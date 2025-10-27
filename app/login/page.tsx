@@ -212,7 +212,7 @@ export default function LoginPage() {
 
                 {/* Sign Up Link */}
                 <p className="mt-6 text-center text-sm text-neutral-600">
-                  Don't have an account?{" "}
+                  Don&apos;t have an account?{" "}
                   <Link
                     href="https://chat.whatsapp.com/F2sdzUoQzpWLocya5oVkIJ"
                     className=" font-semibold text-blue-600 hover:text-blue-700"

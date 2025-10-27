@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+
 import {
   ArrowRightIcon,
   ChevronDownIcon,
@@ -26,15 +26,7 @@ export default function Hero({
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background image with parallax effect */}
-      <div className="absolute inset-0">
-        <Image
-          src={image}
-          alt="Background"
-          fill
-          priority
-          className="object-cover scale-105 animate-slow-zoom"
-        />
-      </div>
+      <div className="absolute inset-0"></div>
 
       {/* Multi-layer gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />

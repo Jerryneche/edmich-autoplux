@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { headers } from "next/headers";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -12,6 +13,20 @@ import {
 import { HeartIcon } from "@heroicons/react/24/solid";
 
 // Placeholder products for when API fails
+
+interface Product {
+  id: string;
+  name: string;
+  image: string;
+  verified: string;
+  category: string;
+  reviews: string;
+  rating: string;
+  price: string;
+  product: string;
+  company: string;
+  // add other fields
+}
 const PLACEHOLDER_PRODUCTS = [
   {
     id: "1",
@@ -194,7 +209,7 @@ export default async function ShopPage() {
 
         {/* Products Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product: any) => (
+          {products.map((product: Product) => (
             <div key={product.id} className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
 
@@ -202,10 +217,12 @@ export default async function ShopPage() {
                 {/* Image Placeholder */}
                 <div className="relative w-full aspect-w-4 aspect-h-3 bg-gradient-to-br from-neutral-100 to-neutral-200 flex items-center justify-center">
                   {product.image ? (
-                    <img
+                    <Image
                       src={product.image}
                       alt={product.name}
-                      className="h-full w-full object-cover"
+                      width={300}
+                      height={200}
+                      className="object-cover"
                     />
                   ) : (
                     <ShoppingCartIcon className="h-16 w-16 text-neutral-300" />
