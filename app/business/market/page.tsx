@@ -283,8 +283,8 @@ export default async function MarketPage() {
                   <div className="relative h-48 bg-gradient-to-br from-neutral-100 to-neutral-200 flex items-center justify-center">
                     {product.image ? (
                       <Image
-                        src={supplier.image}
-                        alt={supplier.name}
+                        src={suppliers.image}
+                        alt={suppliers.name}
                         width={300}
                         height={200}
                         className="object-cover"
